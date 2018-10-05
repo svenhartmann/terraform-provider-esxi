@@ -9,7 +9,7 @@ Terraform Provider
 Requirements
 ------------
 -   [Terraform](https://www.terraform.io/downloads.html) 0.10.1+
--   [Go](https://golang.org/doc/install) 1.9 (to build the provider plugin)
+-   [Go](https://golang.org/doc/install) 1.11 (to build the provider plugin)
 -   [ovftool](https://www.vmware.com/support/developer/ovf/) from VMware.  NOTE: ovftool installer for windows doesn't put ovftool.exe in your path.  You will need to manually set your path.
 -   You MUST enable ssh access on your ESXi hypervisor.
   * Google 'How to enable ssh access on esxi'
@@ -22,19 +22,9 @@ Building The Provider
 Clone repository to: `$GOPATH/src/github.com/terraform-providers/terraform-provider-esxi`
 
 ```sh
-
-export GOPATH="/usr/lib"
-go get -u golang.org/x/crypto/ssh
-
-mkdir -p $GOPATH/src/github.com/hashicorp
-cd $GOPATH/src/github.com/hashicorp
-git clone https://github.com/hashicorp/terraform.git
-
-mkdir -p $GOPATH/src/github.com/terraform-providers
-cd $GOPATH/src/github.com/terraform-providers
 git clone https://github.com/josenk/terraform-provider-esxi.git
 
-cd $GOPATH/src/github.com/terraform-providers/terraform-provider-esxi
+cd terraform-provider-esxi
 go build -o terraform-provider-esxi_`cat version`
 
 cp terraform-provider-esxi_`cat version` /usr/local/bin
