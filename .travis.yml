@@ -10,6 +10,9 @@ go:
 git:
   depth: 1
 
+env:
+  - GO111MODULE=on
+
 # Skip the install step. Don't `go get` dependencies. Only build with the code
 # in vendor/
 #install: true
