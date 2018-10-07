@@ -43,7 +43,7 @@ func guestCREATE(c *Config, guest_name string, disk_store string,
 
   if vmid != "" {
 		  // We don't need to create the VM.   It already exists.
-			fmt.Printf("[guestCREATE] guest %s already exists vmid: \n",guest_name, stdout)
+			fmt.Printf("[guestCREATE] guest %s already exists vmid: \n",guest_name)
 
 			//
 			//   Power off guest if it's powered on.
