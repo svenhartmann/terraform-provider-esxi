@@ -177,7 +177,7 @@ func updateVmx_contents(c *Config, vmid string, iscreate bool, memsize int, numv
 		networkType = ""
 
 		for i := 0; i < 4; i++ {
-			log.Printf("[updateVmx_contents] i: %s\n", i)
+			log.Printf("[updateVmx_contents] i: %d\n", i)
 
 			if virtual_networks[i][0] != "" {
 
