@@ -172,6 +172,21 @@ func resourceGUEST() *schema.Resource {
 					},
 				},
 			},
+			"role": &schema.Schema{
+				Type:        schema.TypeString,
+				Required:    true,
+				ForceNew:    false,
+				DefaultFunc: schema.EnvDefaultFunc("role", "vm"),
+				Description: "VM role, e.g. webserver.",
+			},
+			"remote_user": &schema.Schema{
+				Type:        schema.TypeString,
+				Required:    false,
+				ForceNew:    false,
+				DefaultFunc: schema.EnvDefaultFunc("remote_user", ""),
+				Description: "Remote user, e.g. for Ansible.",
+			},
+
 		},
 	}
 }
